@@ -23,7 +23,7 @@ then
   echo "\$INPUT_FILESTODECRYPT not set. Nothing to decrypt."
 else
   echo "\$INPUT_FILESTODECRYPT is set. Will be decrypting."
-  export FILES="${INPUT_EXTRAFILE}"
+  export FILES="${INPUT_FILESTODECRYPT}"
   echo "going to execute: "
   echo ansible-vault decrypt ${FILES}
   ansible-vault decrypt ${FILES}
