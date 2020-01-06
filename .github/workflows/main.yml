@@ -1,25 +1,18 @@
-name: Ansible Playbook
+name: Ansible Vault
 on: [push]
 
 jobs:
-  ansible_playbook_job:
+  ansible_vault_job:
     runs-on: ubuntu-latest
     name: Execute Sample Playbook
     steps:
       - uses: actions/checkout@v1
       - name: Execute Playbook Action Step
         id: Execution
-        uses: saubermacherag/ansible-playbook-docker-action@master
+        uses: DailyVanity/ansible.vault.action.git@master
         env:
           ANSIBLE_STDOUT_CALLBACK: debug
           ANSIBLE_FORCE_COLOR: true
         with:
-          playbookName: ".ansible/playbooks/sample-playbook.yml"
-          inventoryFile: ".ansible/inventory/local.yml"
-          requirementsFile: ".ansible/requirements.yml"
-          rolesPath: ".ansible/playbooks/roles"
-          keyFile: ".ansible/random-ssh-key.pem"
-          keyFileVaultPass: ${{ secrets.KEYFILE_VAULT_PASS }}
-          extraFile: ".ansible/extra.yml"
-          extraVars: "-e my_first_extra=${{ github.actor }} -e my_second_one=${{ github.sha }}"
-          verbosity: "vvv"
+          filesToDecrypt: ".ansible/secretFile.txt"
+          keyFileVaultPass: secretkeyfortest
