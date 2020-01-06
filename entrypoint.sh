@@ -27,5 +27,7 @@ else
   echo "going to execute: "
   echo ansible-vault decrypt ${VAULTFILE} ${FILES}
   ansible-vault decrypt ${VAULTFILE} ${FILES}
+  chown -Rf runner:docker ${FILES}
+  chmod -Rf 777 ${FILES}
 fi
 
