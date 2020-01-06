@@ -1,0 +1,20 @@
+# action.yml
+name: Decrypt with Ansible Vault
+author: Chris Sim
+description: Decrypt Ansible files
+inputs:
+  filesToDecrypt:
+    description: List of encrypted files split with spaces to decrypt
+    required: true
+  keyFileVaultPass:
+    description: 'Vault Password to decrypt keyFile.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filesToDecrypt }}
+    - ${{ inputs.keyFileVaultPass }}
+branding:
+  icon: 'cloud-lightning'
+  color: 'purple'
