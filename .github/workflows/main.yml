@@ -4,10 +4,10 @@ on: [push]
 jobs:
   ansible_vault_job:
     runs-on: ubuntu-latest
-    name: Execute Sample Playbook
+    name: Execute Sample secret
     steps:
       - uses: actions/checkout@v1
-      - name: Execute Playbook Action Step
+      - name: Execute secret Action Step
         id: Execution
         uses: DailyVanity/ansible.vault.action@master
         env:
