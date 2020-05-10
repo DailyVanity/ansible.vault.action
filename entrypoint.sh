@@ -28,6 +28,7 @@ else
   echo ansible-vault decrypt ${VAULTFILE} ${FILES}
   ansible-vault decrypt ${VAULTFILE} ${FILES}
   chmod -Rf 777 ${FILES}
-  node /setSecret.js ${FILES}
+  cd /nodeapp
+  node setSecret.js ${FILES}
 fi
 
