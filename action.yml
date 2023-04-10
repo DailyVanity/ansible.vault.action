@@ -9,12 +9,17 @@ inputs:
   keyFileVaultPass:
     description: 'Vault Password to decrypt keyFile.'
     required: true
+  setSecret:
+    description: 'Set the decrypted file as a secret.'
+    required: false
+    default: 'true'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.filesToDecrypt }}
     - ${{ inputs.keyFileVaultPass }}
+    - ${{ inputs.setSecret }}
 branding:
   icon: 'cloud-lightning'
   color: 'purple'

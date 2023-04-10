@@ -28,6 +28,8 @@ else
   echo ansible-vault decrypt ${VAULTFILE} ${FILES}
   ansible-vault decrypt ${VAULTFILE} ${FILES}
   chmod -Rf 777 ${FILES}  
-  node /nodeapp/setSecret.js ${FILES}
+  if [ "$INPUT_SETSECRET" == 'true' ]
+    node /nodeapp/setSecret.js ${FILES}
+  fi
 fi
 
