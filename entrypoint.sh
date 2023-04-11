@@ -30,6 +30,6 @@ else
   chmod -Rf 777 ${FILES}  
   if [ "$INPUT_SETSECRET" == 'true' ]
     node /nodeapp/setSecret.js ${FILES}
-  fi
+  then
 fi
 
