@@ -14,6 +14,7 @@ function run() {
 
     for(var i=0; i<lines.length;i++) {
       var line = lines[i].split('=',2)
+      console.log("Setting secret for: "+line[0])
       if(line[0]) {
         core.exportVariable(line[0], line[1]);
         core.setSecret(line[1]);
