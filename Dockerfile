@@ -1,4 +1,4 @@
-FROM pinkrobin/docker-ansible-alpine:2.8.5-3.10.3-py2.7
+FROM alpine/ansible:2.17.0
 
 MAINTAINER Chris Sim <chris.sim@dailyvanity.sg>
 
